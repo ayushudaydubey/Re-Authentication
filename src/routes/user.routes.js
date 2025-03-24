@@ -8,6 +8,10 @@ router.get("/register",userController.registerViewController)
 
 router.post("/register",userController.registerUserController)
 
+router.get("/login",userController.loginViewController)
+
+router.post("/login",userController.loginUserController)
+
 
 
 
