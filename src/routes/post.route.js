@@ -1,9 +1,10 @@
 const postRouter = require("express").Router()
+const userMiddleware = require("../middlewares/user.middlewares")
 
 const postController = require("../controller/post.controller")
 
-postRouter.get("/create",postController.postViewController)
+postRouter.get("/create",userMiddleware.authUser , postController.postViewController)
 
-postRouter.post("/create",postController.postCreateController)
+postRouter.post("/create", userMiddleware.authUser , postController.postCreateController)
 
-module.exports =  postRouter
+module.exports =  postRouter 
