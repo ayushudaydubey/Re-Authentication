@@ -12,7 +12,7 @@ module.exports.authUser = async (req,res,next) => {
   }
   const decoded = jwt.verify(token,process.env.SEC_KEY)
   req.user = decoded 
-  console.log(decoded);
+  // console.log(decoded);
   next()
   
 }

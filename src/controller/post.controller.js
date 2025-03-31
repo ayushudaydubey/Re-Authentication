@@ -11,7 +11,7 @@ module.exports.postCreateController = async (req,res) => {
   const post = await postModel.create({
     media,
     caption,
-    author:req.user.id
+    author:req.users.id
 
 
   })

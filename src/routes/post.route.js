@@ -5,6 +5,6 @@ const postController = require("../controller/post.controller")
 
 postRouter.get("/create",userMiddleware.authUser , postController.postViewController)
 
-postRouter.post("/create", userMiddleware.authUser , postController.postCreateController)
+postRouter.post("/create",userMiddleware.authUser , postController.postCreateController)
 
 module.exports =  postRouter 

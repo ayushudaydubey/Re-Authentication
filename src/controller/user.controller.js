@@ -80,12 +80,14 @@ module.exports.loginUserController = async (req,res) => {
   })
 }
 
-module.exports.feedViewController = async (req,res) => {
-  
-  const post = await postModel.find().populate("author")
+// logout route.................
 
-  console.log(post);
+module.exports.logoutController = async (req, res) => {
+  console.log("Logout route hit!");
+  res.cookie("token", "" )
+  res.redirect("/login"); 
+};
 
-  res.render("feed",{post})
-  
-}
+module.exports.feedViewController = (req, res) => {
+res.render("feed")
+};

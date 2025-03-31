@@ -6,7 +6,8 @@ const postSchema = new mongoose.Schema({
   },
   caption:{
     type:String
-  }
+  },
+  author: { type: mongoose.Schema.Types.ObjectId, ref: 'users' }  
 })
 
 const postModel  = mongoose.model("post",postSchema)
