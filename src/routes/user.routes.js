@@ -13,7 +13,7 @@ router.get("/login",userController.loginViewController)
 
 router.post("/login",userController.loginUserController)
 
-router.post("/logout",userController.logoutController);
+router.get("/logout",userController.logoutController);
 
 
 

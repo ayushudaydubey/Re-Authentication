@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
+<body class="bg-zinc-900 text-white  ">
+ <div class="container ">
   <form action="/post/create" method="post">
-    <input type="file" placeholder="media" name="media" accept="image/*">
+    <input type="text" placeholder="media" name="media">
     <input type="text" placeholder=" caption" name="caption">
     <button type="submit">POST</button>
   </form>
+ </div>
 </body>
 </html>

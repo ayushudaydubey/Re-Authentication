@@ -3,13 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Document</title> 
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 </head>
-<body>
-  <form action="/user/login" method="post">
-    <input type="email" placeholder="email" name="email">
-    <input type="password" placeholder="password" name="password">
-    <button type="submit"> login</button>
-  </form>
+<body class=" bg-zinc-900 text-white ">
+  <h1 class="text-3xl font-bold text-center p-6">Login Page</h1>
+  <div class="container p-6 ">
+    <form class="flex flex-col item-center gap-4" action="/user/login" method="post">
+
+      <input class="border-2 border-zinc-600 px-2 py-2 rounded " type="text" placeholder="Email Id" name="email">
+      <input class="border-2 border-zinc-600 px-2 py-2 rounded " type="password" placeholder="Password" name="password">
+      <button class="bg-blue-600 font-bold text-xl p-2 rounded" type="submit"> Login</button>
+    </form>
+  </div>
 </body>
 </html>

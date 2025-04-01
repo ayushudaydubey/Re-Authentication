@@ -15,7 +15,12 @@ const userSchema = new mongoose.Schema(
 
     password:{
     type:String
-    }
+    },
+
+    posts:[{
+   type:mongoose.Schema.Types.ObjectId,  // refer to post data base 
+   ref:"post"
+    }]
 
   }
 )

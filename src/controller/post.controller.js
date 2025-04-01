@@ -22,7 +22,7 @@ module.exports.postCreateController = async (req,res) => {
 
   },{
     $push:{
-      post:post
+      post:post._id
 
     }
   })
