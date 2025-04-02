@@ -18,7 +18,7 @@ const userSchema = new mongoose.Schema(
     },
 
     posts:[{
-   type:mongoose.Schema.Types.ObjectId,  // refer to post data base 
+   type:mongoose.Schema.Types.ObjectId,  // ._id of  post database of  multiple user stored in array
    ref:"post"
     }]
 

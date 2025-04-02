@@ -87,10 +87,8 @@ module.exports.logoutController = async (req, res) => {
 };
 
 module.exports.feedViewController = async (req, res) => {
-  const user = await userModel.find({ _id: req.user.id })
+  const user = await userModel.findById(req.user.id).populate("posts"); // Use populate to get the actual posts
+  const post = await postModel.find({ author: req.user._id }); // This retrieves the posts of the logged-in user
 
-
-  const post = await postModel.find()
-  res.render("feed", { user, post })
-
+  res.render("feed", { user, post }); // Make sure user and post are being passed correctly
 };
