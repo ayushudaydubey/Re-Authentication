@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs")
 const jwt = require("jsonwebtoken")
 const cookieParser = require("cookie-parser")
 const postModel = require("../models/post.model")
-
+// const multer=require('../../config/multer.config')
 
 module.exports.homePageController = (req, res) => {
   res.send("home page")
@@ -14,8 +14,11 @@ module.exports.registerViewController = (req, res) => {
 }
 
 module.exports.registerUserController = async (req, res) => {
-  const { username, email, profileImage, password } = req.body
-
+  const { username, email, password } = req.body
+console.log(req.body);
+const   profileImage = req.file.filename; 
+console.log(profileImage);
+ 
   const hashPassword = await bcrypt.hash(password, 10)
 
   const user = await userModel.create({
@@ -40,6 +43,12 @@ module.exports.registerUserController = async (req, res) => {
   })
 
 }
+// module.exports.registerUserController = async (req, res) => {
+//   res.send("Heeyey")
+//   const {username, email,password,profileImage}=req.body;
+//   console.log(req.body);
+  
+// }
 
 module.exports.loginViewController = (req, res) => {
   res.render("login")

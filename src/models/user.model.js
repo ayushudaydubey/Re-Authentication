@@ -10,7 +10,9 @@ const userSchema = new mongoose.Schema(
     
     },
     profileImage:{
-      type:String
+      type:String,
+      default:"https://unsplash.com/photos/a-person-holding-a-bouquet-of-pink-roses-36DiB9aswvU"
+      
     },
 
     password:{

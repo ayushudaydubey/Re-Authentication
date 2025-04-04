@@ -17,6 +17,7 @@ module.exports.postCreateController = async (req, res) => {
   });
 
   // Push the post's ID to the logged-in user's posts array
+  
   await userModel.findOneAndUpdate(
     { _id: req.user.id },
     { $push: { posts: post._id } }  // Correct field name is 'posts'
